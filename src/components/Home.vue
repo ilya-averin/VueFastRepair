@@ -2,7 +2,7 @@
   .content-wrapper
     h1 This is Fast Repair
     section.block_info
-      //- img(src='./img/laptop.png', alt='альтернативный текст')
+      img(src='../img/laptop.png', alt='альтернативный текст')
       .text
         p.big It is a long established fact
         p beby the readable of a page when lookingits layout.
@@ -12,7 +12,7 @@
     .content-wrapper
       section.two_window
         .main-overlay
-          //- img(src='./img/Symbol 1 – 1.png', alt='')
+          img(src='../img/Symbol 1 – 1.png', alt='')
           p Have a
             br
             |  question?
@@ -31,13 +31,13 @@
         .gallery
           .gallery-item
             p Create Now >
-            //- img.gallery-image(src='./img/iphonexr.jpg', alt='')
+            img.gallery-image(src='../img/iphonexr.jpg', alt='')
           .gallery-item
             p Create Now >
-            //- img.gallery-image(src='./img/laptop.jpg', alt='')
+            img.gallery-image(src='../img/laptop.jpg', alt='')
           .gallery-item
             p Create Now >
-            //- img.gallery-image(src='./img/tablet.png', alt='')
+            img.gallery-image(src='../img/tablet.png', alt='')
 </template>
 
 <script>
@@ -49,8 +49,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../assets/style/main'
-// @import '../assets/style/app'
+@import '../assets/stylus/main.styl'
+
 .content-wrapper h1{
   font-size: 4rem;
   color: #303030;
@@ -58,7 +58,6 @@ export default {
   margin-right: auto;
   margin-top: 4rem;
 }
-
 .text{
   width: 480px;
   height: 230px;
@@ -72,8 +71,6 @@ export default {
     color: #222
   }
 }
-
-
  .block_info{
    margin-top: 3rem;
    display: flex;
@@ -84,7 +81,6 @@ export default {
   //  flex-direction row
   //  flex-wrap wrap
  }
-
 .content-wrapper
   width: 100%;
   .two_window
@@ -132,12 +128,9 @@ export default {
       // background-image: -moz-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
       // background-image: -webkit-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
 	    // background-image: -ms-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
-
 p.big
   font-size 2rem
   color #000
-
-
 .content-wrapper
   width: 100%;
   .three_window
@@ -170,9 +163,6 @@ p.big
       p
         font-size: 25px
         color: #fff
-
-
-
 .gallery
   display: flex
   justify-content: center;
@@ -216,4 +206,5 @@ p.big
       margin-left: 20px;
       cursor pointer
       font-size: 1rem
+
 </style>
