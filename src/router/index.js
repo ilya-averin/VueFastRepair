@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Repair from '@/components/Repair'
 import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
+import NotFound from '@/components/404'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/registration',
       name: 'registration',
       component: Registration
+    },
+    {
+      path: '*',
+      name: 'notFound',
+      component: NotFound
     }
   ]
 })

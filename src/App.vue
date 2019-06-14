@@ -49,10 +49,10 @@ export default {
 
 <style lang="stylus">
 @import './assets/stylus/main.styl'
-// @import './assets/style/app.styl';
-.header-logo{
-  // margin-left: 5rem;
-}
+
+// .header-logo{
+//   margin-left: 5rem;
+// }
 
 .navbar-list{
   // margin-right: 7rem;
@@ -69,17 +69,22 @@ span.line{
   width: 100%;
 }
 
-img{
+img
   // width: 440px;
   // height: 250px;
   max-width 100%
   // margin-right: 2rem;
   text-align: center;
-}
+
 
 .navbar-item
-    font-size: 0.8rem
+    font-size: 0.9rem
     letter-spacing: 0.3px
     &:hover
       text-decoration: underline
+
+.navbar-link
+  &.router-link-exact-active
+    color #085ff7
+    // text-decoration: underline
 </style>
