@@ -1,4 +1,5 @@
 <template lang="pug">
+  //- one section
   .content-wrapper
     h1 This is Fast Repair
     section.block_info
@@ -8,7 +9,6 @@
         p beby the readable of a page when lookingits layout.
           The point of using Lorem is that ita more-or-less
           normal It is a long.
-
     //- two section
     .content-wrapper
       section.two_window
@@ -19,7 +19,6 @@
             |  question?
             br
             | just text
-
     //-  three section
     .content-wrapper
       section.three-window
@@ -41,28 +40,6 @@
             p Create Now >
             img.gallery-image(src='../img/tablet.png', alt='')
 
-    //- four section
-    .content-wrapper
-      section.four-window
-        .four-window_block
-          h2 Accordion with symbols
-          p
-            | In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign is replaced with a "minus" sign.
-          button.accordion Section 1
-          .panel
-            p
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          button.accordion Section 2
-          .panel
-            p
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          button.accordion Section 3
-          .panel
-            p
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-
-
 </template>
 
 <script>
@@ -75,6 +52,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../assets/stylus/main.styl'
+
 // one section
 .content-wrapper h1{
   font-size: 4rem;
@@ -167,6 +145,7 @@ export default {
     height: 110vh;
     max-width: 100%;
     background: linear-gradient(#522F40, 60%, #B67255);
+    // margin-bottom 100px
     // background #000
     .three-window_block
       display flex
@@ -203,14 +182,10 @@ export default {
         height: 270px;
         overflow: hidden;
         margin-right 2rem
-        // cursor: pointer;
         box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4)
-        transition: 0.5s
+        transition: all .3s cubic-bezier(.02,.01,.47,1);
         &:hover
-          transition: 0.5s
-          -webkit-transform: scale(1.01);
-          -moz-transform: scale(1.01);
-          -o-transform: scale(1.01);
+          transform translate(0,-6px)
           -webkit-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           -moz-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
@@ -228,57 +203,6 @@ export default {
           margin-left: 20px;
           cursor pointer
           font-size: 1rem
-
-// four section
-.content-wrapper
-  width: 100%;
-  .four-window
-    width: 100%;
-    height: 110vh;
-    max-width: 100%;
-    background: linear-gradient(#522F40, 60%, #B67255);
-    // background #000
-    .four-window_block
-      // display flex
-      // justify-content: center
-      // align-items: center
-      margin-top 5rem
-//       .accordion
-//         background-color: #eee
-//         color: #444
-//         cursor: pointer
-//         padding: 18px
-//         width: 100%
-//         border: none
-//         text-align: left
-//         outline: none
-//         font-size: 15px
-//         transition: 0.4s
-
-
-//       .active, .accordion:hover
-//         background-color: #ccc
-
-
-//       .accordion:after
-//         content: '\002B'
-//         color: #777
-//         font-weight: bold
-//         float: right
-//         margin-left: 5px
-
-
-//       .active:after
-//         content: "\2212"
-
-
-//       .panel
-//         padding: 0 18px
-//         background-color: white
-//         max-height: 0
-//         overflow: hidden
-//         transition: max-height 0.2s ease-out
-
 
 
 </style>

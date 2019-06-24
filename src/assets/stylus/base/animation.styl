@@ -29,3 +29,28 @@
     transform: translate3d(0, -100%, 0);
   }
 }
+
+// animate.css
+//common class
+.animated
+  animation-duration: .4s;
+  animation-fill-mode: both;
+
+// inputs validate
+.shake {
+  animation-name: shake;
+}
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(5px, 0, 0);
+  }
+}
