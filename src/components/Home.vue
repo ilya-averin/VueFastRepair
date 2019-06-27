@@ -16,7 +16,7 @@
           img(src='../img/Symbol 1 – 1.png', alt='')
           p Have a
             br
-            |  question?
+            | question?
             br
             | just text
     //-  three section
@@ -31,19 +31,35 @@
             or randomised words which
         .three-window_gallery
           .three-window_item
-            p Create Now >
+            span
+              | Create
+              br
+              | request
+            p
+              router-link(to="/repair")   How >
             img.gallery-image(src='../img/iphonexr.jpg', alt='')
           .three-window_item
-            p Create Now >
+            span
+              | Create
+              br
+              | request
+            p
+              router-link(to="/repair")   How >
             img.gallery-image(src='../img/laptop.jpg', alt='')
           .three-window_item
-            p Create Now >
+            span
+              | Create
+              br
+              | request
+            p
+              router-link(to="/repair")   How >
             img.gallery-image(src='../img/tablet.png', alt='')
 
 </template>
 
 <script>
 export default {
+  name: 'Home',
   data (){
     return {}
   }
@@ -194,15 +210,30 @@ export default {
           width: 100%
           height: 100%
           object-fit: fill
+          position: relative;
+        span
+          z-index: 99;
+          position: absolute;
+          // color: #2459d6
+          color #085ff7
+          margin-top: 140px;
+          margin-left: 10px;
+          cursor pointer
+          font-size: 2rem
+          font-weight bold
+          line-height 80%
         p
           z-index: 99;
           position: absolute;
-          color: #2459d6
-          font-size: 20px;
-          margin-top: 200px;
-          margin-left: 20px;
+          color: #085ff7
+          margin-top: 210px;
+          margin-left: 10px;
           cursor pointer
-          font-size: 1rem
+          font-size: 1.3rem
+          font-weight normal
+        a
+          color #085ff7
+          font-weight normal
 
 
 </style>

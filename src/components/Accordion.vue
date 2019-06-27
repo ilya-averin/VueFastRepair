@@ -10,7 +10,12 @@
 <script>
 export default {
   name: 'Accordion',
-  props: ['items'],
+// props: ['items'],
+  props: {
+    items: {
+      type: Array
+    }
+  },
   data () {
 
     return {
@@ -57,28 +62,22 @@ export default {
       cursor pointer
       padding 6px
       background #878787
-      color #fafafa
+      color #000
       font-size 0.9rem
       border-radius 2px
-      background: transparent
       border 1px solid #878787
-      transition: all .3s cubic-bezier(.02,.01,.47,1);
-      // &.collapsible-item-body
-      //   background-color: red
+      transition: all .3s cubic-bezier(.02,.01,.47,1)
+      &:after
+        content: '\002B';
+        color: #000
+        float: right;
+        padding-right 8px
       &:hover
-        background-color: #888
+        background-color: #707070
         color #000
         transition 0.1s
         transform: translate(0,-3px);
-			  transition-delay: 0s !important;
-
-        // margin-bottom 1px
-        // -webkit-transition: all 3s cubic-bezier(.98,0,1,.28);
-        // -moz-transition: all 3s cubic-bezier(.98,0,1,.28);
-        // -o-transition: all 3s cubic-bezier(.98,0,1,.28);
-        // transition: all 3s cubic-bezier(.98,0,1,.28);
-      // &:active
-      //   background-color: red
+			  transition-delay: 0s !important
     .collapsible-item-body
       padding 10px
       background transparent
@@ -88,12 +87,16 @@ export default {
       border-radius 3px
       margin-bottom 10px
       margin-top -1px
+      &:after
+        content: "\2212";
+
+
 
 
 // .active
 //   background-color: red
 
-.slide-fade-enter-active
+// .slide-fade-enter-active
 
 .slide-fade-leave-active
   max-height: 0;

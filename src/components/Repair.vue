@@ -3,7 +3,7 @@
     section
       .container
         h1.ui-title-2 Repair
-        p Lorem Ipsum is simply dummy text of the printing
+        //- p Lorem Ipsum is simply dummy text of the printing
 </template>
 
 <script>

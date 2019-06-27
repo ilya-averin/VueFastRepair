@@ -6,7 +6,7 @@
           .navbar-content
             router-link.header-logo(
               to="/"
-            ) FastRepair
+            ) FastRepairR
             .button-burger(
               @click="menuShow = !menuShow"
               :class="{ active: menuShow }"
@@ -31,51 +31,34 @@
       .main-page
         h1 Answers to popular questions
         accordion(:items='collapsibleItems')
-        .footer-content
-          .about
-            h3 About
-            p
-              | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis reiciendis unde quae aperiam ratione at!
-            p
-              i.ion-ios-location
-              |  34 Street Name, City Name Here, United States
-            p
-              i.ion-ios-telephone
-              |  +1 234 5678 910
-            p
-              i.ion-ios-email
-              |  info@alotan.com
-          .links
-            h3 Links
-            a(href='#') About
-            a(href='#') Hairstyle
-            a(href='#') Contact
-          .blog
-            h3 Blog
-            a(href='#')
-              small March 20, 2018
-              p Lorem ipsum dolor sit amet.
-            a(href='#')
-              small March 20, 2018
-              p Lorem ipsum dolor sit amet.
-            a(href='#')
-              small March 20, 2018
-              p Lorem ipsum dolor sit amet.
-          .social
-            h3 Connect
-            a(href='#')
-              i.ion-social-facebook
-            a(href='#')
-              i.ion-social-twitter
-            a(href='#')
-              i.ion-social-instagram
-            a(href='#')
-              i.ion-social-youtube
-          .copyright
-            p Copyright ©2018 All rights reserved | Made by Su.
-
-
-
+        .footer-wrapper
+          .footer-contact
+            .col
+              h4 About
+              ul
+                li Fast Repair
+                li +375 29 829 90 57
+                li fast.repair@gmail.com
+            .col
+              h4 Introduction
+              ul
+                li Login
+                li Registration
+            .col
+              h4 Links
+              ul
+                li Repair
+                li Login
+                li Registration
+            .col.social
+              h4 Connect
+              ul
+                li
+                  img(src='https://svgshare.com/i/5fq.svg', width='32', style='width: 32px;')
+                li
+                  img(src='https://svgshare.com/i/5eA.svg', width='32', style='width: 32px;')
+                li
+                  img(src='https://svgshare.com/i/5f_.svg', width='32', style='width: 32px;')
 
 
     router-view
@@ -86,7 +69,8 @@ import Accordion from './components/Accordion';
 
 export default {
   components: {
-        Accordion
+        Accordion,
+
     },
   data () {
     return {
@@ -113,6 +97,10 @@ export default {
         },
         {
           header: 'Header 4',
+          body: 'he point of using Lorem Ipsum is that it has a more-or-less normal distribution.'
+        },
+        {
+          header: 'Header 1',
           body: 'he point of using Lorem Ipsum is that it has a more-or-less normal distribution.'
         }
       ]
@@ -153,7 +141,6 @@ footer
     // margin-top 50px
     display flex
     flex-direction column
-    // justify-content center
     align-content center
     align-items center
     padding-top 5rem
@@ -162,47 +149,45 @@ footer
       font-family $mainFont
       margin-bottom 2rem
       font-size 1.7rem
+
     // contact
     // footer
-    // background: #f2f2f2;
-    // padding-top: 100px;
-    // padding-bottom: 100px;
-    // .footer-content
-    //   display: grid
-    //   grid-template-columns: repeat(5, 1fr)
-    //   grid-gap: 10px
-    // .footer-content
-    //   /* border: 1px solid black; */
-    //   padding: 10px;
-    //   line-height: 1.5em
-    // .footer-content>.about
-    //   grid-column: span 2
-    // .footer-content>div i
-    //   font-size: 20px
-    //   padding-right: 20px
-    // .footer-content>div>*
-    //   margin-bottom: 20px
-    // .footer-content>div>a
-    //   color: black;
-    //   text-decoration: none
-    //   transition: 0.2s
-    //   display: block
-    // .footer-content>.about>p:nth-child(n+3),
-    // .footer-content>div>a:hover,
-    // .footer-content>.blog small,
-    // .footer-content>.copyright
-    //   color: #999
-    // .footer-content>.social>a
-    //   display: inline-block
-    //   text-align: center
-    // .footer-content>.copyright
-    //   grid-column: span 5
-    //   text-align: center
-    // @media (max-width: 600px)
-    //   .footer-content{
-    //     display: block
-
-
+    .footer-wrapper
+      width: 100%;
+      max-width: 1200px
+      margin: auto
+      .footer-contact
+        margin-top 7rem
+        width: 100%
+        height: auto
+        color:#555
+        display:flex
+        justify-content center
+        flex-flow:wrap
+        margin-left 110px
+        .col
+          width: 300px
+          h4
+            color #b7b7b7
+            margin: 0
+            padding: 0
+            font-size: .9em
+            padding: 20px 0px 5px 0px
+            letter-spacing: 1px
+          ul
+            list-style-type: none
+            margin: 0
+            padding: 0
+            li
+              font-size: .8em
+              padding: 2px 0px 2px 0px
+              cursor: pointer
+              color #848484
+              &:hover
+                color #b7b7b7
+        .col.social ul li
+          display: inline-block;
+          padding-right: 5px !important;
 
 
 
