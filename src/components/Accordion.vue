@@ -1,9 +1,17 @@
 <template lang="pug">
   .collapsible-wrapper
-    .collapsible-item(v-for='(item, index) in customItems')
-      .collapsible-item-header(@click='activeBody(index)') {{ item.header }}
+    .collapsible-item(
+      v-for='(item, index) in customItems'
+      )
+      .collapsible-item-header(
+        @click='activeBody(index)'
+        :class="{active: item.active}"
+        ) {{ item.header }}
       transition(name='slide-fade')
-        .collapsible-item-body(v-html='item.body', v-if='item.active')
+        .collapsible-item-body(
+          v-html='item.body',
+          v-if='item.active'
+          )
 
 </template>
 
@@ -67,17 +75,21 @@ export default {
       border-radius 2px
       border 1px solid #878787
       transition: all .3s cubic-bezier(.02,.01,.47,1)
+      &.active
+        background #d9d9d9
+        content: '\2212'
       &:after
-        content: '\002B';
+        content: '\002B'
         color: #000
         float: right;
         padding-right 8px
       &:hover
-        background-color: #707070
+        background-color: #d9d9d9
         color #000
         transition 0.1s
         transform: translate(0,-3px);
 			  transition-delay: 0s !important
+
     .collapsible-item-body
       padding 10px
       background transparent
@@ -87,16 +99,6 @@ export default {
       border-radius 3px
       margin-bottom 10px
       margin-top -1px
-      &:after
-        content: "\2212";
-
-
-
-
-// .active
-//   background-color: red
-
-// .slide-fade-enter-active
 
 .slide-fade-leave-active
   max-height: 0;

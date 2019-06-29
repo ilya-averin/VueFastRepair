@@ -3,17 +3,19 @@
   .content-wrapper
     h1 This is Fast Repair
     section.block_info
-      img(src='../img/laptop.png', alt='альтернативный текст')
+      img.laptop(src='../img/laptop.png', alt='альтернативный текст')
       .text
-        p.big It is a long established fact
-        p beby the readable of a page when lookingits layout.
-          The point of using Lorem is that ita more-or-less
-          normal It is a long.
+        p.first-text It is a long established fact
+        p Beby the readable of a page when lookingits layout.
+          br
+          | The point of using Lorem is that ita more
+          br
+          | normal It is a long.
     //- two section
     .content-wrapper
       section.two_window
         .two_window_overlay
-          img(src='../img/Symbol 1 – 1.png', alt='')
+          img.question(src='../img/Symbol 1 – 1.png', alt='')
           p Have a
             br
             | question?
@@ -37,7 +39,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/iphonexr.jpg', alt='')
+            img.gallery-image(src='../img/iphonexr.jpg', alt='wd')
           .three-window_item
             span
               | Create
@@ -45,7 +47,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/laptop.jpg', alt='')
+            img.gallery-image(src='../img/Group 10.jpg', alt='')
           .three-window_item
             span
               | Create
@@ -70,36 +72,55 @@ export default {
 @import '../assets/stylus/main.styl'
 
 // one section
-.content-wrapper h1{
-  font-size: 4rem;
-  color: #303030;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-}
-.text{
-  width: 480px;
-  height: 230px;
-  border-left: 1px solid #999;
-  align-self: flex-start;
-  p{
-    margin-left: 3rem;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    align-self: center;
-    color: #222
-  }
-}
- .block_info{
-   margin-top: 3rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-flow: row wrap;
-   margin-bottom: 8rem;
-  //  flex-direction row
-  //  flex-wrap wrap
- }
+.content-wrapper
+  display flex
+  justify-content: center
+  align-items: center
+  flex-flow: row wrap;
+  h1
+    font-size: 4rem
+    color: #303030
+    margin-left: auto
+    margin-right: auto
+    margin-top: 4rem
+    @media screen and (max-width: phoneWidth)
+      margin-left: auto
+      margin-right: auto
+      font-size 3rem
+  .block_info
+    margin-top: 3rem
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: row wrap
+    margin-bottom: 8rem
+    .laptop
+      max-width: 100%
+      @media screen and (max-width: phoneWidth)
+        max-width: 65%
+        margin-left: auto;
+        margin-right: auto;
+    .text
+      width: 480px
+      height: 230px
+      border-left: 1px solid red
+      align-self: center
+      @media screen and (max-width: phoneWidth)
+        width: 100%
+        border-left: none
+      p.first-text
+        font-size 2rem
+        color #000
+        font-weight normal
+        @media screen and (max-width: phoneWidth)
+          color blue
+      p
+        margin-left: 3rem
+        margin-top: 1rem
+        font-size: 1.2rem
+        color: #222
+        @media screen and (max-width: phoneWidth)
+          color: red
 
 // two section
 .content-wrapper
@@ -116,8 +137,7 @@ export default {
       justify-content: center;
       align-items: center;
       flex-flow: row wrap;
-      position: absolute;
-      // opacity: 0.9;
+      position: absolute
       z-index: 0;
       left: 0;
       top: 0;
@@ -128,10 +148,8 @@ export default {
         justify-content: center;
         align-items: center;
         flex-direction: column
-      img
-        // text-align center
+      img.question
         max-width: 100%
-        // min-height 50%
         z-index 999
         margin-right 3rem
         @media screen and (max-width: phoneWidth)
@@ -146,12 +164,12 @@ export default {
         order: 1;
         @media screen and (max-width: phoneWidth)
           font-size 4rem
+          line-height: 50px;
+          margin-bottom: 4rem;
       // background-image: -moz-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
       // background-image: -webkit-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
 	    // background-image: -ms-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
-  p.big
-    font-size 2rem
-    color #000
+
 
 // three section
 .content-wrapper
@@ -169,6 +187,8 @@ export default {
       align-items: center;
       flex-flow: row wrap;
       margin-top 5rem
+      @media screen and (max-width: phoneWidth)
+        margin-top 0
       .three-window_btn
         color: #fff;
         font-size: 20px;
@@ -184,19 +204,27 @@ export default {
           // background-color: #fff;
           background-image: none;
           border-color: #ccc;
+        @media screen and (max-width: phoneWidth)
+          font-size: 17px;
+          margin-bottom 5px
+          margin-top 0
       p
         font-size: 25px
         color: #fff
+        @media screen and (max-width: phoneWidth)
+          font-size: 17px
+          display none
     .three-window_gallery
       display: flex
       justify-content: center;
       align-items: center;
+      flex-flow: row wrap;
+      @media screen and (max-width: phoneWidth)
+        margin-bottom 5px
       .three-window_item
-        border-radius: 2px
         margin-top: 12rem;
-        width: 270px;
-        height: 270px;
-        overflow: hidden;
+        width: 270px
+        height: 270px
         margin-right 2rem
         box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4)
         transition: all .3s cubic-bezier(.02,.01,.47,1);
@@ -205,12 +233,29 @@ export default {
           -webkit-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           -moz-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
+        @media screen and (max-width: smPhoneWidth)
+          width: 180px
+          height: 180px
+          // margin-top: 1rem
+        @media screen and (max-width: phoneWidth)
+          width: 200px
+          height: 200px
+          margin-top: 1rem
         .gallery-image
           display: block
           width: 100%
           height: 100%
-          object-fit: fill
-          position: relative;
+          border-radius: 2px;
+          // object-fit: fill
+          // position: relative;
+          &:after
+            content ''
+            position absolute
+            left 0
+            top 0
+            width 100%
+            height 100%
+            background red
         span
           z-index: 99;
           position: absolute;
@@ -222,6 +267,10 @@ export default {
           font-size: 2rem
           font-weight bold
           line-height 80%
+          @media screen and (max-width: smPhoneWidth)
+            margin-top: 110px;
+          @media screen and (max-width: phoneWidth)
+            margin-top: 100px;
         p
           z-index: 99;
           position: absolute;
@@ -231,6 +280,10 @@ export default {
           cursor pointer
           font-size: 1.3rem
           font-weight normal
+          // @media screen and (max-width: smPhoneWidth)
+          //   margin-top: 170px
+          @media screen and (max-width: phoneWidth)
+            margin-top: 160px;
         a
           color #085ff7
           font-weight normal
