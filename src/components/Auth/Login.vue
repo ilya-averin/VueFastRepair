@@ -115,7 +115,7 @@ export default {
 input
   &.error
     border-color #fc5c65
-    animation shake .4s
+    animation shake .3s
 
 .buttons-list
   text-align left

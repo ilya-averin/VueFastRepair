@@ -28,9 +28,7 @@ export default {
 
     return {
       collapsibleItems: [],
-
-      isActive: false
-
+      // isActive: false
     }
   },
   computed: {
@@ -51,7 +49,7 @@ export default {
       this.collapsibleItems[index].active=!this.collapsibleItems[index].active;
       this.collapsibleItems.forEach((item,ind) =>{
         if(ind!=index){
-          item.active=false;
+          item.active=false
         }
       })
     }
@@ -84,7 +82,7 @@ export default {
         float: right;
         padding-right 8px
       &:hover
-        background-color: #d9d9d9
+        background-color: #b0b0b0
         color #000
         transition 0.1s
         transform: translate(0,-3px);

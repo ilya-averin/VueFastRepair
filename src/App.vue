@@ -59,6 +59,8 @@
                   i.fab.fa-instagram
                 li
                   i.fab.fa-vk
+                li
+                  i.fab.fa-telegram-plane
 
 
     router-view

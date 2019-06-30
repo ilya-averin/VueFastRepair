@@ -1,5 +1,5 @@
 <template lang="pug">
-  .content-wrapper
+  .content-wrapper-model
     section
       .container
         h1.ui-title-2 Tasks
@@ -42,46 +42,41 @@
           label(
             for="radioTablet"
           ) Tablet
+
         .total-model
+          //- Notebook
           .total-model__notebook(
             v-if="whatRepair === 'Notebook'"
           )
-            span Total model Notebook
+            span.total-title How laptop model?
+            input.model-input(
+              type='number'
+              v-model='notebookModel'
+            )
+          //- Phone
           .total-model__phone(
             v-if="whatRepair === 'Phone'"
           )
-            span Total model Phone
+            span.total-title How phone model?
+            input.model-input(
+              type='number'
+              v-model='phoneModel'
+            )
+          //- Tablet
           .total-model__tablet(
             v-if="whatRepair === 'Tablet'"
           )
-            span Total model Tablet
+            span.total-title How model tablet?
+            input.model-input(
+              type='number'
+              v-model='tabletModel'
+            )
 
-    section
-      .container
-        .task-list
-          .task-item(
-            v-for="task in tasks"
-            :key="task.id"
-            :class="{ completed: task.completed }"
-          )
-            .ui-card.ui-card--shadow
-              .task-item__info
-                .task-item__main-info
-                  span.ui-label.ui-label--light {{ task.whatRepair }}
-                  span
-                    | Status:
-                    i.fas.fa-circle
-                span.button-close
-              .task-item__content
-                .task-item__header
-                  .ui-checkbox-wrapper
-                      input.ui-checkbox(
-                        type='checkbox'
-                        v-model="task.completed"
-                      )
-                  span.ui-title-3 {{ task.title }}
-                .task-item__body
-                  p.ui-text-regular {{ task.description }}
+      .button-send
+        .button.button--round.button-primary(
+        @click="newTask"
+      ) Send
+
 </template>
 
 <script>
@@ -90,28 +85,12 @@ export default {
     return {
       taskTitle: '',
       taskDescription: '',
-      whatRepair: 'Notebook',
-      taskId: 3,
-      tasks: [
-      {
-        'id': 1,
-        'title': 'Lenovo',
-        'description': 'I need help: my laptop broke and I need to fix it urgently,I need help: my laptop broke and I need to fix it urgently',
-        'whatRepair': 'Notebook',
-        'model': '',
-        'completed': false,
-        'editing': false
-      },
-      {
-        'id': 2,
-        'title': 'iPhone',
-        'description': 'I need help: my laptop broke and I need to fix it urgently',
-        'whatRepair': 'Phone',
-        'model': '',
-        'completed': false,
-        'editing': false
-      }
-    ],
+      whatRepair: '',
+      // taskId: 3,
+      // model
+      notebookModel: '',
+      phoneModel: '',
+      tabletModel: ''
     }
   },
   mounted() {
@@ -123,18 +102,38 @@ export default {
     newTask () {
       if (this.taskTitle === ''){
 				return
-			}
-      this.tasks.push({
-        id: this.taskId,
+      }
+      let model
+      if
+        (this.whatRepair === 'Phone'){
+          model = this.phoneModel
+        } else if
+          (this.whatRepair === 'Notebook'){
+          model = this.notebookModel
+          } else {
+            model = this.tabletModel
+          }
+
+      //Reset
+      this.notebookModel = '',
+      this.phoneModel    = '',
+      this.tabletModel   = ''
+
+      const task = {
+        // id: this.taskId,
         title: this.taskTitle,
         description: this.taskDescription,
         whatRepair: this.whatRepair,
+        model,
         completed: false,
         editing: false
-      })
+      }
+      this.$store.dispatch('newTask', task)
+
+      console.log(task)
 
       //Reset
-			this.taskId += 1
+			// this.taskId += 1
 			this.taskTitle = ''
 			this.taskDescription = ''
     }
@@ -144,44 +143,41 @@ export default {
 
 <style lang="stylus" scoped>
 
+.content-wrapper-model
+  max-width 1280px
+  // flex-direction column
+  // margin-left auto
+  // margin-right auto
+
 .option-list
   display flex
+  align-items center
   .what-repair--radio
     margin-right 10px
+    margin-top 10px
   label
     margin-right 20px
+    font-size 1.4rem
     &:last-child
       margin-right 0
-.task-item
-  margin-bottom 20px
-  &:last-child
-    margin-bottom 0
 
-.ui-label
-  margin-right 8px
-  border-radius 3px
-  // background-color blue
+.total-model
+  margin-top 30px
 
-.task-item__info
-  display flex
-  align-items center
-  justify-content space-between
-  margin-bottom  20px
-  i.fas.fa-circle
-    margin-left 8px
-    color tomato
-  .button-close
-    width 20px
-    height @width
+.total-title
+  display block
+  margin-bottom 6px
+  font-size 1rem
 
-.task-item__header
-  display flex
-  align-items center
-  margin-bottom 10px
-  .ui-checkbox-wrapper
-    margin-right 10px
-    // margin-top 10px
-    .ui-title-3
-      margin-bottom -5px
+.model-input
+  max-width 400px
+  margin-right 10px
 
+.button-send
+  margin-left 2.4rem
+  // display flex
+	// justify-content space-between
+  .button--round.button-primary
+    border-radius 5px
 </style>
+

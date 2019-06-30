@@ -59,7 +59,6 @@
 
 <script>
 import { required, email, minLength, sameAs } from 'vuelidate/lib/validators'
-
 export default {
   data (){
     return {
@@ -107,28 +106,23 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
 .auth
   display flex
 .auth_banner,.auth_form
   width 50%
-
 .form-item
   .error
     display none
-
   &.errorInput
     .error
       display block
       margin-bottom 8px
       font-size 13px
       color #fc5c65
-
 input
   &.error
     border-color #fc5c65
-    animation shake .4s
-
+    animation shake .3s
 .buttons-list
   text-align left
   margin-bottom 20px
@@ -136,12 +130,13 @@ input
     text-align center
     &:last-child
       margin-bottom 0
-
 .button-primary
-  border-radius 5px
+  border-radius 3px
   &:hover
     backgroun #444ce0
-
 a
   color #444ce0
 </style>
+
+
+
