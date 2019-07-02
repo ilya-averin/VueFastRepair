@@ -39,7 +39,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/iphonexr.jpg', alt='wd')
+            img.gallery-image(src='../img/darkiphone.jpg', alt='wd')
           .three-window_item
             span
               | Create
@@ -55,7 +55,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/tablet.png', alt='')
+            img.gallery-image(src='../img/darktablet.jpg', alt='')
 
 </template>
 
@@ -245,7 +245,7 @@ export default {
           display: block
           width: 100%
           height: 100%
-          border-radius: 2px;
+          border-radius: 4px;
           // object-fit: fill
           // position: relative;
           &:after
@@ -259,8 +259,8 @@ export default {
         span
           z-index: 99;
           position: absolute;
-          // color: #2459d6
-          color #085ff7
+          color: #fff
+          // color #085ff7
           margin-top: 140px;
           margin-left: 10px;
           cursor pointer
@@ -285,7 +285,8 @@ export default {
           @media screen and (max-width: phoneWidth)
             margin-top: 160px;
         a
-          color #085ff7
+          // color #085ff7
+          color: #fafafa
           font-weight normal
 
 

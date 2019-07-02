@@ -74,7 +74,9 @@ export default {
       border 1px solid #878787
       transition: all .3s cubic-bezier(.02,.01,.47,1)
       &.active
-        background #d9d9d9
+        background #b9b9b9
+      &.active:after
+        // content: &minus
         content: '\2212'
       &:after
         content: '\002B'

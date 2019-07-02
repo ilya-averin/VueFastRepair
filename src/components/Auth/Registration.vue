@@ -5,6 +5,7 @@
         .auth
           .auth_banner
             h1.ui-title-2 Hello baner
+            //- img.banner(src='../../img/matebook-x-pro-mystic-silver.png', alt='')
           .auth_form
             span.ui-title-2 Registration
             form(@submit.prevent="onSubmit")

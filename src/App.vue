@@ -6,7 +6,8 @@
           .navbar-content
             router-link.header-logo(
               to="/"
-            ) FastRepairR
+            ) FastRepair
+            //- img.logo(src='./img/logo.jpg', alt='альтернативный текст')
             .button-burger(
               @click="menuShow = !menuShow"
               :class="{ active: menuShow }"
@@ -53,7 +54,6 @@
               h4 Connect
               ul
                 li
-                  //- img(src='https://svgshare.com/i/5fq.svg', width='32', style='width: 32px;')
                   i.fab.fa-facebook-square
                 li
                   i.fab.fa-instagram
@@ -130,6 +130,9 @@ export default {
 // body {
 //   height: 100%; min-width:900px;
 // }
+.navbar
+  height  auto
+
 html
   position relative
   min-height 100%
@@ -253,16 +256,20 @@ img
   // margin-right: 2rem;
   text-align: center;
 
+.logo
+  left 0
 
 .navbar-item
   font-size: 0.9rem
   letter-spacing: 0.3px
   &:hover
-    text-decoration: underline
+    // text-decoration: underline
+    color #000
 
 .navbar-link
   &.router-link-exact-active
-    color #085ff7
+    color #000
+    // color #085ff7
     // text-decoration: underline
 
 
