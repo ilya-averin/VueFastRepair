@@ -155,6 +155,8 @@ footer
     align-content center
     align-items center
     padding-top 5rem
+    @media screen and (max-width: phoneWidth)
+      height 90vh
     h1
       color #fafafa
       font-family $mainFont
@@ -215,11 +217,13 @@ footer
         .col.social ul li
           display inline-block
           margin-right 10px
+          @media screen and (max-width: phoneWidth)
+            display block
+            margin-left 1rem
           i
-            font-size: 1.5rem
-          // @media screen and (max-width: phoneWidth)
-          //   width 50%
-          //   height 50%
+            font-size: 1.3rem
+            @media screen and (max-width: phoneWidth)
+              font-size: 1rem
 
 
 

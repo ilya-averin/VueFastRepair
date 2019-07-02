@@ -1,11 +1,11 @@
 <template lang="pug">
   //- one section
   .content-wrapper
-    h1 This is Fast Repair
+    h1 Thi is Fast Repair
     section.block_info
       img.laptop(src='../img/laptop.png', alt='альтернативный текст')
       .text
-        p.first-text It is a long established fact
+        p.first-text IT IS ALONG TIME WE
         p Beby the readable of a page when lookingits layout.
           br
           | The point of using Lorem is that ita more
@@ -103,7 +103,7 @@ export default {
     .text
       width: 480px
       height: 230px
-      border-left: 1px solid red
+      border-left: 1px solid #b8b8b8
       align-self: center
       @media screen and (max-width: phoneWidth)
         width: 100%
@@ -233,14 +233,14 @@ export default {
           -webkit-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           -moz-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
-        @media screen and (max-width: smPhoneWidth)
-          width: 180px
-          height: 180px
-          // margin-top: 1rem
         @media screen and (max-width: phoneWidth)
           width: 200px
           height: 200px
           margin-top: 1rem
+        @media screen and (max-width: smPhoneWidth)
+          width: 170px
+          height: 170px
+          margin-top: .5rem
         .gallery-image
           display: block
           width: 100%
@@ -267,10 +267,10 @@ export default {
           font-size: 2rem
           font-weight bold
           line-height 80%
-          @media screen and (max-width: smPhoneWidth)
-            margin-top: 110px;
           @media screen and (max-width: phoneWidth)
-            margin-top: 100px;
+            margin-top: 100px
+          @media screen and (max-width: smPhoneWidth)
+            margin-top: 80px
         p
           z-index: 99;
           position: absolute;
@@ -280,14 +280,15 @@ export default {
           cursor pointer
           font-size: 1.3rem
           font-weight normal
-          // @media screen and (max-width: smPhoneWidth)
-          //   margin-top: 170px
           @media screen and (max-width: phoneWidth)
-            margin-top: 160px;
+            margin-top: 160px
+          @media screen and (max-width: smPhoneWidth)
+            margin-top: 137px
         a
-          // color #085ff7
           color: #fafafa
           font-weight normal
+          &:hover
+            color #085ff7
 
 
 </style>

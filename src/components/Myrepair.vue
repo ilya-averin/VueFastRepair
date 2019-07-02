@@ -7,18 +7,18 @@
           //- buttons all,active,completed
           .buttons-list
             //- p {{ filter }}
-            .button.button--round.button-primary(
+            .button.button--plain.button-primary(
               @click="filter = 'active'"
-
             ) Active
-            .button.button--round.button-primary(
+
+            .button.button--plain.button-primary(
               @click="filter = 'completed'"
-
             ) Completed
-            .button.button--round.button-primary(
-              @click="filter = 'all'"
 
+            .button.button--plain.button-primary(
+              @click="filter = 'all'"
             ) All
+
         //- TASKS
         .task-list
           .task-item(
@@ -72,15 +72,35 @@ export default {
 <style lang="stylus" scoped>
 
 // buttons
+// .buttons-list
+//   margin-right: 10px;
+//   .button.button--round.button-primary
+    // padding .3rem .9rem
+    // font-size 1rem
+    // @media screen and (max-width: phoneWidth)
+    //   padding .3rem .9rem
+    // @media screen and (max-width: smPhoneWidth)
+    //   font-size .5rem
+
+// TASKS
 .task-list__header
   display flex
   justify-content space-between
   align-items center
   margin-bottom 30px
-  .button
-    margin-right 10px
-    .ui-title-2
-      margin-bottom 0
+  flex-flow wrap
+  @media screen and (max-width: phoneWidth)
+    display block
+  .ui-title-2
+    margin-bottom 10px
+    @media screen and (max-width: phoneWidth)
+      font-size 1rem
+  .buttons-list
+    // border-radius 30px
+    .button.button--plain.button-primary
+      margin-right 5px
+      border-radius 9px
+
 
 .task-item
   margin-bottom 20px

@@ -132,7 +132,7 @@ input
     &:last-child
       margin-bottom 0
 .button-primary
-  border-radius 3px
+  border-radius 5px
   &:hover
     backgroun #444ce0
 a
