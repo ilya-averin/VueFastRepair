@@ -76,18 +76,19 @@ export default {
       &.active
         background #b9b9b9
       &.active:after
-        // content: &minus
-        content: '\2212'
+        transition .5s
+        transform: rotate(45deg)
       &:after
+        transition .5s
         content: '\002B'
         color: #000
         float: right;
-        padding-right 8px
+        margin-right 10px
       &:hover
         background-color: #b0b0b0
         color #000
         transition 0.1s
-        transform: translate(0,-3px);
+        transform: translate(0,-2px);
 			  transition-delay: 0s !important
 
     .collapsible-item-body

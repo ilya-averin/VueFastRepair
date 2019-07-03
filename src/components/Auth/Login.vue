@@ -98,8 +98,18 @@ export default {
 
 .auth
   display flex
+  justify-content center
+  flex-wrap wrap
 .auth_banner,.auth_form
   width 50%
+  @media screen and (max-width: 768px)
+    width 100%
+    margin-bottom 30px
+    &:last-child
+      margin-bottom 0
+
+.auth_form
+  max-width 400px
 
 .form-item
   .error

@@ -94,6 +94,16 @@ export default {
     align-items: center
     flex-flow: row wrap
     margin-bottom: 8rem
+    // background:
+    //   radial-gradient(circle at 50% 0,
+    //     rgba(255,0,0,.1),
+    //     rgba(255,0,0,0) 70.71%),
+    //   radial-gradient(circle at 6.7% 75%,
+    //     rgba(0,0,255,.4),
+    //     rgba(0,0,255,0) 70.71%),
+    //   radial-gradient(circle at 93.3% 75%,
+    //     rgba(0,255,0,.1),
+    //     rgba(0,255,0,0) 70.71%) beige;
     .laptop
       max-width: 100%
       @media screen and (max-width: phoneWidth)
@@ -143,7 +153,11 @@ export default {
       top: 0;
       width: 100%;
       height: 100%;
-      background #000
+      // background #000
+      background: #282828; /* Old browsers */
+      background: -moz-linear-gradient(top,  #282828 68%, #282828 68%, #522f40 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #282828 68%,#282828 68%,#522f40 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #282828 68%,#282828 68%,#522f40 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       @media screen and (max-width: phoneWidth)
         justify-content: center;
         align-items: center;

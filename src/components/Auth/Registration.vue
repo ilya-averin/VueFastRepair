@@ -5,7 +5,10 @@
         .auth
           .auth_banner
             h1.ui-title-2 Hello baner
-            //- img.banner(src='../../img/matebook-x-pro-mystic-silver.png', alt='')
+            p Please register in order to use in full:
+              br
+              |  (to request a repair of your equipment)
+            //- img.banner(src='../../img/sign-in.png', alt='')
           .auth_form
             span.ui-title-2 Registration
             form(@submit.prevent="onSubmit")
@@ -107,10 +110,24 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 .auth
   display flex
+  justify-content center
+  flex-wrap wrap
 .auth_banner,.auth_form
   width 50%
+  @media screen and (max-width: 768px)
+    width 100%
+    margin-bottom 30px
+    &:last-child
+      margin-bottom 0
+  p
+    color #737373
+
+.auth_form
+  max-width 400px
+
 .form-item
   .error
     display none
