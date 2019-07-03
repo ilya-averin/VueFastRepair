@@ -53,6 +53,7 @@
               type='number'
               v-model='notebookModel'
             )
+
           //- Phone
           .total-model__phone(
             v-if="whatRepair === 'Phone'"

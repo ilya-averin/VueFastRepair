@@ -304,5 +304,4 @@ export default {
           &:hover
             color #085ff7
 
-
 </style>
