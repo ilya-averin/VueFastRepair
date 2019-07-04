@@ -53,6 +53,13 @@
               type='number'
               v-model='notebookModel'
             )
+            //- label
+            //- | File
+            //- input.upload-input(
+            //-   type='file',
+            //-   ref='file',
+            //-   v-on:change='handleFileUpload()'
+            //-   )
 
           //- Phone
           .total-model__phone(
@@ -131,6 +138,7 @@ export default {
       }
       this.$store.dispatch('newTask', task)
 
+      console.log('SEND!')
       console.log(task)
 
       //Reset

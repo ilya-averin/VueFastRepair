@@ -27,6 +27,11 @@
                   router-link.navbar-link(
                     :to="`${link.url}`"
                   ) {{ link.title }}
+                li.navbar-item(
+                  v-if="checkUser"
+                  @click="logout"
+                )
+                  span.navbar-link Logout
 
     //- footer_section
     footer
@@ -77,13 +82,13 @@ export default {
   data () {
     return {
       menuShow: false,
-      linkMenu: [
-        {title: 'Home', url: '/'},
-        {title: 'Repair', url: '/repair'},
-        {title: 'Myrepair', url: '/myrepair'},
-        {title: 'Login', url: '/login'},
-        {title: 'Registration', url: '/registration'}
-      ],
+      // linkMenu: [
+      //   {title: 'Home', url: '/'},
+      //   {title: 'Repair', url: '/repair'},
+      //   {title: 'Myrepair', url: '/myrepair'},
+      //   {title: 'Login', url: '/login'},
+      //   {title: 'Registration', url: '/registration'}
+      // ],
 
       collapsibleItems: [
         {
@@ -106,6 +111,31 @@ export default {
           header: 'Header 1',
           body: 'he point of using Lorem Ipsum is that it has a more-or-less normal distribution.'
         }
+      ]
+    }
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('logoutUser')
+      this.$router.push('/login')
+    }
+  },
+  computed: {
+    checkUser () {
+      return this.$store.getters.checkUser
+    },
+    linkMenu () {
+      if (this.checkUser) {
+        return [
+          {title: 'Home', url: '/'},
+          {title: 'Repair', url: '/repair'},
+          {title: 'Myrepair', url: '/myrepair'}
+        ]
+      }
+      return [
+        {title: 'Home', url: '/'},
+        {title: 'Login', url: '/login'},
+        {title: 'Registration', url: '/registration'}
       ]
     }
   },
@@ -264,7 +294,7 @@ img
   left 0
 
 .navbar-item
-  font-size: 0.9rem
+  font-size: 1rem
   letter-spacing: 0.3px
   &:hover
     // text-decoration: underline

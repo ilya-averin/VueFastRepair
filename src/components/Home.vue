@@ -1,7 +1,7 @@
 <template lang="pug">
   //- one section
   .content-wrapper
-    h1 Thi is Fast Repair
+    h1 This is FastRepair
     section.block_info
       img.laptop(src='../img/laptop.png', alt='альтернативный текст')
       .text
@@ -39,7 +39,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/darkiphone.jpg', alt='wd')
+            img.gallery-image(src='../img/Group 12.png', alt='wd')
           .three-window_item
             span
               | Create
@@ -47,7 +47,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/Group 10.jpg', alt='')
+            img.gallery-image(src='../img/Group 13.png', alt='')
           .three-window_item
             span
               | Create
@@ -55,7 +55,7 @@
               | request
             p
               router-link(to="/repair")   How >
-            img.gallery-image(src='../img/darktablet.jpg', alt='')
+            img.gallery-image(src='../img/Group 14.png', alt='')
 
 </template>
 

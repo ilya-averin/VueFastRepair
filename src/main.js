@@ -8,6 +8,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/database'
+import 'firebase/messaging'
+import 'firebase/storage'
+
 Vue.use(
   Vuelidate,
   // Uimini
@@ -21,5 +27,25 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  created () {
+    var firebaseConfig = {
+        apiKey: "AIzaSyAgdvIOENjGxtxTEtsdlaP2uUbrZRFoGwA",
+        authDomain: "repair-request-7aa7c.firebaseapp.com",
+        databaseURL: "https://repair-request-7aa7c.firebaseio.com",
+        projectId: "repair-request-7aa7c",
+        storageBucket: "",
+        messagingSenderId: "68598953921",
+        appId: "1:68598953921:web:841bc00a545c0045"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // Auth chek
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.$store.dispatch('loggedUser', user)
+      }
+      // loading all tasks
+      this.$store.dispatch('loadTasks')
+    })
+  }
 })

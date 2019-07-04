@@ -33,7 +33,9 @@
                   span
                     | Status:
                     i.fas.fa-circle
-                span.button-close
+                span.button-close(
+                  @click="deleteTask(task.id)"
+                )
               .task-item__content
                 .task-item__header
                   .ui-checkbox-wrapper
@@ -52,6 +54,15 @@ export default {
     return {
       filter: 'active',
 
+    }
+  },
+  methods: {
+    deleteTask (id) {
+      this.$store.dispatch('deleteTask', id)
+        .then(() => {
+          console.log('TASK DELETED!')
+          this.$store.dispatch('loadTasks')
+        })
     }
   },
   computed: {
@@ -147,4 +158,3 @@ export default {
       margin-bottom -5px
 
 </style>
-

@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store'
+
 import Home from '@/components/Home'
 import Repair from '@/components/Repair'
 import Myrepair from '@/components/Myrepair'
@@ -20,12 +22,23 @@ export default new Router({
     {
       path: '/repair',
       name: 'repair',
-      component: Repair
+      component: Repair,
+      beforeEnter (to, from, next) {
+        store.getters.checkUser ? next() : next('/login')
+        // if (store.getters.checkUser) {
+        //   next()
+        // } else {
+        //   next('/login')
+        // }
+      }
     },
     {
       path: '/myrepair',
       name: 'myrepair',
-      component: Myrepair
+      component: Myrepair,
+      beforeEnter (to, from, next) {
+        store.getters.checkUser ? next() : next('/login')
+      }
     },
     {
       path: '/login',

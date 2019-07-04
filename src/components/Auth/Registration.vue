@@ -46,13 +46,15 @@
               .buttons-list
                 button.button.button--plain.button-primary(
                   type="submit"
-                  :disabled="submitStatus === 'PENDING'"
-                ) Registration
+                )
+                  span(v-if="loading") Loading...
+                  span(v-else) Registration
 
               .buttons-list.buttons-list--info
                 p.typo__p(v-if="submitStatus === 'OK'") Thanks for your submission!
                 p.typo__p(v-if="submitStatus === 'ERROR'") Please fill the form correctly.
-                p.typo__p(v-if="submitStatus === 'PENDING'") Sending...
+                p.typo__p(v-else) {{ submitStatus }}
+                //- p.typo__p(v-if="submitStatus === 'PENDING'") Sending...
 
               .buttons-list.buttons-list--info
                 span Do you have account?
@@ -92,18 +94,32 @@ export default {
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
-        console.log('submit!!!')
+        // console.log('submit!!!')
         const user = {
           email:    this.email,
           password: this.password
         }
-        console.log(user)
+        this.$store.dispatch('registerUser', user)
+          .then(() => {
+            console.log('REGISTER!')
+            this.submitStatus = 'OK'
+            this.$router.push('/')
+          })
+          .catch(err => {
+            this.submitStatus = err.message
+          })
+        // console.log(user)
         // do your submit logic here
-        this.submitStatus = 'PENDING'
-        setTimeout(() => {
-          this.submitStatus = 'OK'
-        }, 500)
+        // this.submitStatus = 'PENDING'
+        // setTimeout(() => {
+        //   this.submitStatus = 'OK'
+        // }, 500)
       }
+    }
+  },
+  computed: {
+    loading () {
+      return this.$store.getters.loading
     }
   }
 }

@@ -9,7 +9,7 @@
         ) {{ item.header }}
       transition(name='slide-fade')
         .collapsible-item-body(
-          v-html='item.body',
+          v-html='item.body'
           v-if='item.active'
           )
 
