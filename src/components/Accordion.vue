@@ -62,6 +62,10 @@ export default {
 .collapsible-wrapper
   width 70%
   height auto
+  @media screen and (max-width: 768px)
+    width 95%
+  @media screen and (max-width: 480px)
+    width 90%
   .collapsible-item
     margin-bottom 1px
     .collapsible-item-header

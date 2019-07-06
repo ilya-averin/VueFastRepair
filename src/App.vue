@@ -72,12 +72,11 @@
 </template>
 
 <script>
-import Accordion from './components/Accordion';
+import Accordion from './components/Accordion'
 
 export default {
   components: {
-        Accordion,
-
+        Accordion
     },
   data () {
     return {
@@ -185,6 +184,8 @@ footer
     align-content center
     align-items center
     padding-top 5rem
+    @media screen and (max-width: tableWidth)
+      height 170vh
     @media screen and (max-width: phoneWidth)
       height 90vh
     h1
@@ -284,10 +285,7 @@ span.line{
 }
 
 img
-  // width: 440px;
-  // height: 250px;
   max-width 100%
-  // margin-right: 2rem;
   text-align: center;
 
 .logo
@@ -297,14 +295,17 @@ img
   font-size: 1rem
   letter-spacing: 0.3px
   &:hover
-    // text-decoration: underline
     color #000
+  @media screen and (max-width: phoneWidth)
+    font-size: 1.2rem
+  &:last-child
+    padding-right: 20px
 
 .navbar-link
   &.router-link-exact-active
     color #000
-    // color #085ff7
-    // text-decoration: underline
-
+    @media screen and (max-width: phoneWidth)
+      color #085ff7
+      text-decoration: underline
 
 </style>

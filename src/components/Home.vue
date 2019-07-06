@@ -1,7 +1,7 @@
 <template lang="pug">
   //- one section
   .content-wrapper
-    h1 This is FastRepair
+    h1 REQUEST REPAIR
     section.block_info
       img.laptop(src='../img/laptop.png', alt='альтернативный текст')
       .text
@@ -94,16 +94,6 @@ export default {
     align-items: center
     flex-flow: row wrap
     margin-bottom: 8rem
-    // background:
-    //   radial-gradient(circle at 50% 0,
-    //     rgba(255,0,0,.1),
-    //     rgba(255,0,0,0) 70.71%),
-    //   radial-gradient(circle at 6.7% 75%,
-    //     rgba(0,0,255,.4),
-    //     rgba(0,0,255,0) 70.71%),
-    //   radial-gradient(circle at 93.3% 75%,
-    //     rgba(0,255,0,.1),
-    //     rgba(0,255,0,0) 70.71%) beige;
     .laptop
       max-width: 100%
       @media screen and (max-width: phoneWidth)
@@ -115,6 +105,8 @@ export default {
       height: 230px
       border-left: 1px solid #b8b8b8
       align-self: center
+      @media screen and (max-width: tableWidth)
+        border-left: none
       @media screen and (max-width: phoneWidth)
         width: 100%
         border-left: none
@@ -122,15 +114,20 @@ export default {
         font-size 2rem
         color #000
         font-weight normal
+        @media screen and (max-width: tableWidth)
+          font-size 2.3em
         @media screen and (max-width: phoneWidth)
-          color blue
+          color 303030
       p
         margin-left: 3rem
         margin-top: 1rem
         font-size: 1.2rem
         color: #222
+        @media screen and (max-width: tableWidth)
+          font-size: 1.5rem
         @media screen and (max-width: phoneWidth)
-          color: red
+          color: #4f4f4f
+
 
 // two section
 .content-wrapper
@@ -166,73 +163,80 @@ export default {
         max-width: 100%
         z-index 999
         margin-right 3rem
+        @media screen and (max-width: tableWidth)
+          max-width: 40%
         @media screen and (max-width: phoneWidth)
           max-width: 70%
           min-height 35%
           order: 2
-          margin-left: auto;
-          margin-right: auto;
+          margin-left: auto
+          margin-right: auto
       p
         font-size 3rem
         color #fff
         order: 1;
         @media screen and (max-width: phoneWidth)
           font-size 4rem
-          line-height: 50px;
-          margin-bottom: 4rem;
-      // background-image: -moz-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
-      // background-image: -webkit-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
-	    // background-image: -ms-linear-gradient( 150deg, rgb(61, 204, 194) 0%, rgb(110,69,226) 100%);
-
+          line-height: 50px
+          margin-bottom: 4rem
 
 // three section
 .content-wrapper
-  width: 100%;
+  width: 100%
   .three-window
-    width: 100%;
-    height: 110vh;
-    max-width: 100%;
-    background: linear-gradient(#522F40, 60%, #B67255);
-    // margin-bottom 100px
-    // background #000
+    width: 100%
+    height: 110vh
+    max-width: 100%
+    background: linear-gradient(#522F40, 60%, #B67255)
+    @media screen and (max-width: phoneWidth)
+      height: 120vh
     .three-window_block
       display flex
-      justify-content: center;
-      align-items: center;
-      flex-flow: row wrap;
+      justify-content: center
+      align-items: center
+      flex-flow: row wrap
       margin-top 5rem
+      @media screen and (max-width: tableWidth)
+        margin-top 0
+        justify-content: flex-start
+        margin-left 5rem
       @media screen and (max-width: phoneWidth)
         margin-top 0
       .three-window_btn
-        color: #fff;
-        font-size: 20px;
-        border: 1px solid #fff;
-        border-radius: 9px;
-        padding: .3rem 1rem;
-        background-color: transparent;
+        color: #fff
+        font-size: 20px
+        border: 1px solid #fff
+        border-radius: 9px
+        padding: .3rem 1rem
+        background-color: transparent
         cursor: pointer;
         transition: color .20s;
         margin-right 10rem
         &:hover
           color: #ccc;
           // background-color: #fff;
-          background-image: none;
-          border-color: #ccc;
+          background-image: none
+          border-color: #ccc
+        @media screen and (max-width: tableWidth)
+          display none
         @media screen and (max-width: phoneWidth)
-          font-size: 17px;
-          margin-bottom 5px
-          margin-top 0
+          // font-size: 10px;
+          // margin-bottom 5px
+          // margin-top 0
+          display none
       p
         font-size: 25px
         color: #fff
+        @media screen and (max-width: tableWidth)
+          font-size: 1rem
         @media screen and (max-width: phoneWidth)
           font-size: 17px
           display none
     .three-window_gallery
       display: flex
-      justify-content: center;
-      align-items: center;
-      flex-flow: row wrap;
+      justify-content: center
+      align-items: center
+      flex-flow: row wrap
       @media screen and (max-width: phoneWidth)
         margin-bottom 5px
       .three-window_item
@@ -247,14 +251,25 @@ export default {
           -webkit-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           -moz-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
           box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.43);
+        @media screen and (max-width: tableWidth)
+          width: 150px
+          height: 150px
+          margin-right 2rem
+          &:last-child
+            margin-right 0
+          margin-top: 5rem;
         @media screen and (max-width: phoneWidth)
           width: 200px
           height: 200px
-          margin-top: 1rem
+          &:first-child
+            margin-top: 0
+          margin-top: 1em
+          margin-right 0
         @media screen and (max-width: smPhoneWidth)
           width: 170px
           height: 170px
-          margin-top: .5rem
+          margin-top: 8px
+          margin-right 0
         .gallery-image
           display: block
           width: 100%
@@ -281,6 +296,9 @@ export default {
           font-size: 2rem
           font-weight bold
           line-height 80%
+          @media screen and (max-width: tableWidth)
+            margin-top 60px
+            font-size 1.5rem
           @media screen and (max-width: phoneWidth)
             margin-top: 100px
           @media screen and (max-width: smPhoneWidth)
@@ -294,6 +312,8 @@ export default {
           cursor pointer
           font-size: 1.3rem
           font-weight normal
+          @media screen and (max-width: tableWidth)
+            margin-top 110px
           @media screen and (max-width: phoneWidth)
             margin-top: 160px
           @media screen and (max-width: smPhoneWidth)
