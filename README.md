@@ -4,8 +4,8 @@
 
 # Stack:
 
-ul Vue.js
-ul Vue Router
+- Vue.js
+- Vue Router
 Vuex
 Axios
 UImini
