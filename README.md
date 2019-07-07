@@ -2,6 +2,15 @@
 
 > A Vue.js project
 
+# Stack:
+
+ul Vue.js
+ul Vue Router
+Vuex
+Axios
+UImini
+
+
 ## Build Setup
 
 ``` bash
