@@ -6,9 +6,12 @@
 
 - Vue.js
 - Vue Router
-Vuex
-Axios
-UImini
+- Vuex
+- Axios
+- Pug
+- Stylus
+- UImini
+- Firebase
 
 
 ## Build Setup
